@@ -1,0 +1,33 @@
+{
+  "name": "ajc-accessibility",
+  "version": "1.0.0",
+  "description": "Easy to use pa11y and jest-axe accessibility helper functions designed for testing React projects.",
+  "main": "build/index.js",
+  "scripts": {
+    "build": "babel src --out-dir build",
+    "test-unit": "jest --config=./tests/jest-config/unit.config.js",
+    "test-unit-coverage": "npm run test-unit -- --collectCoverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ajc24/ajc-accessibility.git"
+  },
+  "author": "Anthony Cox",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ajc24/ajc-accessibility/issues"
+  },
+  "homepage": "https://github.com/ajc24/ajc-accessibility#readme",
+  "dependencies": {
+    "jest-axe": "^3.4.0",
+    "pa11y": "^5.3.0",
+    "pa11y-reporter-html": "^2.0.0"
+  },
+  "devDependencies": {
+    "ajc-babel-config": "github:ajc24/ajc-babel-config",
+    "ajc-jest-enzyme": "github:ajc24/ajc-jest-enzyme",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-test-renderer": "^16.13.1"
+  }
+}

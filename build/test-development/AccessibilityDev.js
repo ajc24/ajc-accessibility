@@ -22,7 +22,7 @@ const tempDirName = 'temp';
 const testsDirName = 'tests';
 /* Test data */
 
-const maximumTestTimeout = 30000;
+const maximumTestTimeout = 45000;
 /* Test folder paths */
 
 const tempDirectoryPath = `./${testsDirName}/${accessibilityDirName}/${tempDirName}`;

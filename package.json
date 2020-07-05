@@ -5,6 +5,7 @@
   "main": "build/index.js",
   "scripts": {
     "build": "babel src --out-dir build",
+    "test": "npm run test-unit-coverage",
     "test-unit": "jest --config=./tests/jest-config/unit.config.js",
     "test-unit-coverage": "npm run test-unit -- --collectCoverage"
   },

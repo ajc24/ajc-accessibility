@@ -48,7 +48,7 @@ describe('Accessibility Development', () => {
     });
 
     it('verifies that the maximum timeout is correctly set as a positive integer', () => {
-      expect(maximumTimeout).toBe(30000);
+      expect(maximumTimeout).toBe(45000);
     });
   });
 
@@ -90,7 +90,7 @@ describe('Accessibility Development', () => {
     beforeAll(async () => {
       const componentHtml = TestDev.mountHtmlTemplate(<PassingComponent />, 'PassingComponent');
       results = await AccessibilityDev.runJestAxe(componentHtml);
-    });
+    }, testTimeout);
 
     it('verifies that the component passes the accessibility test', () => {
       expect(results).toHaveNoViolations();
@@ -103,7 +103,7 @@ describe('Accessibility Development', () => {
     beforeAll(async () => {
       const componentHtml = TestDev.mountHtmlTemplate(<FailingComponent />, 'FailingComponent');
       results = await AccessibilityDev.runJestAxe(componentHtml);
-    });
+    }, testTimeout);
 
     it('verifies that the component fails the accessibility test', () => {
       expect(results.violations.length).toBeGreaterThan(0);
@@ -118,7 +118,7 @@ describe('Accessibility Development', () => {
       componentTitle = 'PassingComponent';
       const componentHtml = TestDev.mountHtmlTemplate(<PassingComponent />, componentTitle);
       results = await AccessibilityDev.runPa11y(componentHtml, componentTitle);
-    }, 30000);
+    }, testTimeout);
 
     it('verifies that the component passes the accessibility test', () => {
       expect(results).toBeTruthy();
@@ -138,7 +138,7 @@ describe('Accessibility Development', () => {
       const reportExists = fs.existsSync(`${reportsDirectoryPath}/${componentTitle}-pa11y-report.html`);
       expect(reportExists).toBeFalsy();
     });
-  }, testTimeout);
+  });
 
   describe('runPa11y() method behaviour - Failing component test', () => {
     let componentTitle;
@@ -148,7 +148,7 @@ describe('Accessibility Development', () => {
       componentTitle = 'FailingComponent';
       const componentHtml = TestDev.mountHtmlTemplate(<FailingComponent />, componentTitle);
       results = await AccessibilityDev.runPa11y(componentHtml, componentTitle);
-    }, 30000);
+    }, testTimeout);
   
     it('verifies that the component fails the accessibility test', () => {
       expect(results).toBeFalsy();
@@ -168,7 +168,7 @@ describe('Accessibility Development', () => {
       const reportExists = fs.existsSync(`${reportsDirectoryPath}/${componentTitle}-pa11y-report.html`);
       expect(reportExists).toBeTruthy();
     });
-  }, testTimeout);
+  });
 
   describe('runPa11y() method behaviour - Fixed previously failing component test', () => {
     let componentTitle;
@@ -187,7 +187,7 @@ describe('Accessibility Development', () => {
       componentTitle = 'FailingComponent';
       const componentHtml = TestDev.mountHtmlTemplate(<FixedComponent />, componentTitle);
       results = await AccessibilityDev.runPa11y(componentHtml, componentTitle);
-    }, 30000);
+    }, testTimeout);
   
     it('verifies that the fixed component passes the accessibility test', () => {
       expect(results).toBeTruthy();
@@ -207,5 +207,5 @@ describe('Accessibility Development', () => {
       const reportExists = fs.existsSync(`${reportsDirectoryPath}/${componentTitle}-pa11y-report.html`);
       expect(reportExists).toBeFalsy();
     });
-  }, testTimeout);
+  });
 });

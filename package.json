@@ -21,8 +21,7 @@
   "homepage": "https://github.com/ajc24/ajc-accessibility#readme",
   "dependencies": {
     "jest-axe": "^3.4.0",
-    "pa11y": "^5.3.0",
-    "pa11y-reporter-html": "^2.0.0"
+    "pa11y": "^5.3.0"
   },
   "devDependencies": {
     "ajc-babel-config": "github:ajc24/ajc-babel-config",

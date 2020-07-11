@@ -47,7 +47,7 @@ describe('Accessibility Development - Default Values', () => {
     let results;
 
     beforeAll(async () => {
-      const componentHtml = TestDev.mountHtmlTemplate(<PassingComponent />, 'PassingComponent');
+      const componentHtml = TestDev.mountHtmlTemplate(<PassingComponent />, 'Passing Component');
       results = await AccessibilityDev.runJestAxe(componentHtml);
     }, testTimeout);
 
@@ -60,36 +60,12 @@ describe('Accessibility Development - Default Values', () => {
     let results;
 
     beforeAll(async () => {
-      const componentHtml = TestDev.mountHtmlTemplate(<FailingComponent />, 'FailingComponent');
+      const componentHtml = TestDev.mountHtmlTemplate(<FailingComponent />, 'Failing Component');
       results = await AccessibilityDev.runJestAxe(componentHtml);
     }, testTimeout);
 
     it('verifies that the component fails the accessibility test', () => {
       expect(results.violations.length).toBeGreaterThan(0);
-    });
-  });
-
-  describe('runPa11y() method behaviour - Passing component test', () => {
-    let results;
-
-    beforeAll(async () => {
-      results = await AccessibilityDev.runPa11y('./tests/unit/test-development/html-files/passing.html', 'Passing Component HTML');
-    }, testTimeout);
-
-    it('verifies that the component passes the accessibility test', () => {
-      expect(results).toBeTruthy();
-    });
-  });
-
-  describe('runPa11y() method behaviour - Failing component test', () => {
-    let results;
-
-    beforeAll(async () => {
-      results = await AccessibilityDev.runPa11y('./tests/unit/test-development/html-files/failing.html', 'Failing Component HTML');
-    }, testTimeout);
-
-    it('verifies that the component fails the accessibility test', () => {
-      expect(results).toBeFalsy();
     });
   });
 });

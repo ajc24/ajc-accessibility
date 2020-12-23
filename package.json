@@ -20,13 +20,13 @@
   },
   "homepage": "https://github.com/ajc24/ajc-accessibility#readme",
   "dependencies": {
-    "jest-axe": "^4.0.0"
+    "jest-axe": "^4.1.0"
   },
   "devDependencies": {
     "ajc-babel-config": "github:ajc24/ajc-babel-config",
     "ajc-jest-enzyme": "github:ajc24/ajc-jest-enzyme",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-test-renderer": "^16.13.1"
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-test-renderer": "^17.0.1"
   }
 }

@@ -1,3 +1,5 @@
+import 'jsdom-global/register';
+
 /* Ensure that all relevant functionality is present for document interactions */
 global.document.createRange = () => ({
   getClientRects: () => [],

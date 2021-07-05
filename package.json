@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/ajc24/ajc-accessibility#readme",
   "dependencies": {
-    "jest-axe": "^4.1.0"
+    "jest-axe": "^5.0.1"
   },
   "devDependencies": {
     "ajc-babel-config": "github:ajc24/ajc-babel-config",

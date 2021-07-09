@@ -1,3 +1,4 @@
+import 'jsdom-global/register';
 import React from 'react';
 import { toHaveNoViolations } from 'jest-axe';
 import { TestDev } from 'ajc-jest-enzyme';
